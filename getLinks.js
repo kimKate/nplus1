@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
-const data = JSON.parse(fs.readFileSync("dates.json", "utf-8"));
-const dates = data["0"];
+const file = JSON.parse(fs.readFileSync("dates.json", "utf-8"));
+const dates = file.dates;
 const data = {
   links: [],
 };
@@ -13,8 +13,6 @@ function main() {
     if (error) throw error;
     console.log("complete");
   });
-
-  process.exit();
 }
 
 main();
@@ -23,7 +21,7 @@ async function searchByDate(dates) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const articleSelector = ".col > .item > a";
-  let data = Array;
+  let data = [];
 
   for (let i = 0; i < dates.length; i++) {
     const searchUrl = `https://nplus1.ru/news/${dates[i]}`;
