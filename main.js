@@ -3,7 +3,7 @@ const fs = require("fs");
 
 function main() {
   const startDay = "2015-09-21";
-  const endDate = "2015-09-30";
+  const endDate = "2015-09-31";
   const searchDates = getDates(startDay, endDate);
   const links = getLinks(searchDates)
   

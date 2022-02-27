@@ -1,0 +1,3 @@
+[submodule "SlavicNames"]
+	path = SlavicNames
+	url = https://github.com/wb-08/SlavicNames.git

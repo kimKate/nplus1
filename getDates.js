@@ -1,15 +1,16 @@
 const fs = require("fs");
 // started posting 2015-03-02
 // with author 2015-09-21
-// const end = "2015-09-30"; - fine
 const start = "2015-09-21";
-const end = "2015-12-30";
+const end = "2015-12-31";
+// const end = "2016-06-31";
 const data = {
   dates: [],
 };
 
 function main() {
   data.dates = getDates(start, end);
+  fs.truncate('dates.json', 0, function(){console.log('cleared dates.json')})
 
   fs.writeFile("dates.json", JSON.stringify(data), "utf8", function (error) {
     if (error) throw error;
